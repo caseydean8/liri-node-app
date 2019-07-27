@@ -24,8 +24,14 @@ if (command === "concert-this") {
 }
 
 if (command === "spotify-this-song") {
+    if (searchTerm){
+        console.log(searchTerm);
     console.log("Searching for song");
     song.findSong(searchTerm);
+    }
+    else {
+        song.findSong("the sign ace of base");
+    }
 }
 
 if (command === "movie") {
