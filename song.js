@@ -14,6 +14,7 @@ var Song = function() {
             limit: 1
         })
         .then(function(response) {
+        // look at response for first term, in this case "tracks" to get inside response object.
           var jsonData = response.tracks  
           console.log(jsonData);
         })

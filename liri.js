@@ -10,6 +10,10 @@ var Song = require("./song");
 
 var song = new Song();
 
+var Movie = require("./movie");
+
+var movie = new Movie();
+
 var command = process.argv[2];
 
 var searchTerm = process.argv.slice(3).join(" ");
@@ -22,4 +26,9 @@ if (command === "concert-this") {
 if (command === "spotify-this-song") {
     console.log("Searching for song");
     song.findSong(searchTerm);
+}
+
+if (command === "movie") {
+    console.log("Searching for movie");
+    movie.findMovie(searchTerm);
 }
