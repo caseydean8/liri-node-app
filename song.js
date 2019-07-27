@@ -16,7 +16,7 @@ var Song = function() {
         .then(function(response) {
         // look at response for first term, in this case "tracks", to get inside response object.
           var jsonData = response.tracks.items[0]; 
-
+          console.log(jsonData);  
           var songData = [
             `\n`,
             `Artist: ${jsonData.artists[0].name}`,
@@ -25,7 +25,6 @@ var Song = function() {
             `Album: ${jsonData.album.name}`,
             `\n`
           ].join("\n\n");
-        //   console.log(jsonData.artists[0].name);
           console.log(songData);
         })
         .catch(function(err) {

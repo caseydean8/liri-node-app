@@ -16,9 +16,11 @@ var Band = function() {
             var jsonData = response.data[0];
 
             var concertData = [
+                `\n`,
                 "Venue: " + jsonData.venue.name,
                 "City: " + jsonData.venue.city,
-                "Date: " + moment(jsonData.datetime).format("MMMM Do YYYY")
+                "Date: " + moment(jsonData.datetime).format("MMMM Do YYYY"),
+                `\n`
             ].join("\n\n");
             
             console.log(concertData);
