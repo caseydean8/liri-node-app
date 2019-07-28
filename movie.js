@@ -1,15 +1,17 @@
-var axios = require("axios");
+const axios = require("axios");
 
 // Movie constructor
-var Movie = function() {
+const Movie = function() {
 
-    var divider = "\n------------------------------------------------------------\n\n";
+    const divider = "\n------------------------------------------------------------\n\n";
 
     this.findMovie = function(film) {
-        var url = "http://www.omdbapi.com/?apikey=trilogy&t=" + film;
+        let url = `http://www.omdbapi.com/?apikey=trilogy&t=${film}`;
         axios.get(url).then(function(response) {
-            var jsonData = response.data;
-            var movieData = [
+
+            let jsonData = response.data;
+
+            let movieData = [
                 `\n`,
                 `Title: ${jsonData.Title}`,
                 `Released: ${jsonData.Year}`,
@@ -21,10 +23,10 @@ var Movie = function() {
                 `Actors: ${jsonData.Actors}`,
                 `\n`
             ].join("\n\n");
+
             console.log(movieData);
         })
     }
-
 }
 
 module.exports = Movie;

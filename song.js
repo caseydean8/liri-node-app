@@ -1,11 +1,11 @@
-var Spotify = require('node-spotify-api');
+const Spotify = require('node-spotify-api');
 
-var keys = require("./keys.js");
+const keys = require("./keys.js");
 
-var spotify = new Spotify(keys.spotify);
+let spotify = new Spotify(keys.spotify);
 
-var Song = function() {
-    var divider = "\n------------------------------------------------------------\n\n";
+const Song = function() {
+    const divider = "\n------------------------------------------------------------\n\n";
 
     this.findSong = function(song) {
         spotify.search({ 
@@ -15,9 +15,9 @@ var Song = function() {
         })
         .then(function(response) {
         // look at response for first term, in this case "tracks", to get inside response object.
-          var jsonData = response.tracks.items[0]; 
-        //   console.log(jsonData);  
-          var songData = [
+          let jsonData = response.tracks.items[0]; 
+          
+          let songData = [
             `\n`,
             `Artist: ${jsonData.artists[0].name}`,
             `Song: ${jsonData.name}`,
