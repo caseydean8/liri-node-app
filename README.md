@@ -8,7 +8,7 @@ The command * node liri spotify-this-song "insert song title" * displays the art
 
 The command * node liri "insert movie title" * displays the title, release year, Imdb and Rotten Tomatoes ratings, country, plot, and actors of the movie entered. If no movie title is entered it responds with info for "Mr. Nobody".
 
-The command * node liri do-what-it-says * takes information from a text file and performs a search, in this case "I want it that Way" on Spotify but it can perform the Bandsintown and OMDB API requests when the text is formatted correctly.
+The command * node liri do-what-it-says * takes information from a text file and performs an API request, in this case "I want it that Way" on Spotify but it can perform the Bandsintown and OMDB API requests as well when the text is formatted correctly.
 
 Liri is dependent on several node packages, including axios, dotenv, fs, moment, and node-spotify-api.
 
