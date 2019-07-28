@@ -35,6 +35,11 @@ if (command === "spotify-this-song") {
 }
 
 if (command === "movie") {
+    if (searchTerm) {
     console.log("Searching for movie");
     movie.findMovie(searchTerm);
+    }
+    else {
+        movie.findMovie("mr nobody")
+    }
 }
