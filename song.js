@@ -2,6 +2,8 @@ const Spotify = require('node-spotify-api');
 
 const keys = require("./keys.js");
 
+const fs = require("fs")
+
 let spotify = new Spotify(keys.spotify);
 
 const Song = function() {
@@ -16,7 +18,7 @@ const Song = function() {
         .then(function(response) {
         // look at response for first term, in this case "tracks", to get inside response object.
           let jsonData = response.tracks.items[0]; 
-          
+
           let songData = [
             `\n`,
             `Artist: ${jsonData.artists[0].name}`,
@@ -25,6 +27,10 @@ const Song = function() {
             `Album: ${jsonData.album.name}`,
             `\n`
           ].join("\n\n");
+          // Append songData and the divider to log.txt, print songData to the console
+          fs.appendFile("log.txt", songData + divider, function(err) {
+            if (err) throw err;
+        });
           console.log(songData);
         })
         .catch(function(err) {

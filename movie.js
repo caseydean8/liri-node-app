@@ -1,4 +1,5 @@
 const axios = require("axios");
+const fs = require("fs")
 
 // Movie constructor
 const Movie = function() {
@@ -23,10 +24,13 @@ const Movie = function() {
                 `Actors: ${jsonData.Actors}`,
                 `\n`
             ].join("\n\n");
-
+            // Append movieData and the divider to log.txt, print movieData to the console
+            fs.appendFile("log.txt", movieData + divider, function(err) {
+                if (err) throw err;
+            });
             console.log(movieData);
-        })
-    }
-}
+        });
+    };
+};
 
 module.exports = Movie;
